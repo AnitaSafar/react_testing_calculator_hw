@@ -23,4 +23,14 @@ describe("Calculator", () => {
     cy.get('#operator_add').click();
     cy.get('.display').should('contain', '12');
   });
+
+  it('should be able to combine range of numbers', () => {
+    cy.get('#number6').click();
+    cy.get('#decimal').click();
+    cy.get('#number5').click();
+    cy.get('#operator-subtract').click();
+    cy.get('#number8').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '-1.5');
+  });
 })
