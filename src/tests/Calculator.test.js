@@ -54,5 +54,14 @@ describe('Calculator', () => {
     let sum = container.find('#running-total');
     expect(sum.text()).toEqual('3');
   });
+
+  it('should allow to click same number multiple times', () => {
+    container.find('#number3').simulate('click');
+    container.find('#number3').simulate('click');
+    container.find('#number3').simulate('click');
+    let number = container.find('#running-total');
+    expect(number.text()).toEqual('333');
+  });
+
 })
 
