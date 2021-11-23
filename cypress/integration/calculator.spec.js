@@ -8,11 +8,19 @@ describe("Calculator", () => {
     cy.get('.display').should('contain', '2')
   });
 
-  it('operations should update the display with the result', () => {
+  it('should update the display with the result of the operations', () => {
     cy.get('#number3').click();
     cy.get('#operator-multiply').click();
     cy.get('#number6').click();
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '18')
+  });
+
+  it('should chain operations together', () => {
+    cy.get('#number4').click();
+    cy.get('#operator_add').click();
+    cy.get('#operator_add').click();
+    cy.get('#operator_add').click();
+    cy.get('.display').should('contain', '12');
   });
 })
