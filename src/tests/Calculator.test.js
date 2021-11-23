@@ -44,5 +44,15 @@ describe('Calculator', () => {
     let sum = container.find('#running-total');
     expect(sum.text()).toEqual('15');
   });
+
+  it('should divide numbers', () => {
+    container.find('#number2').simulate('click');
+    container.find('#number1').simulate('click');
+    container.find('#operator-divide').simulate('click');
+    container.find('#number7').simulate('click');
+    container.find('#operator-equals').simulate('click');
+    let sum = container.find('#running-total');
+    expect(sum.text()).toEqual('3');
+  });
 })
 
