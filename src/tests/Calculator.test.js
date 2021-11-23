@@ -63,5 +63,15 @@ describe('Calculator', () => {
     expect(number.text()).toEqual('333');
   });
 
+  it('should chain multiple operations together', () => {
+    container.find('#number4').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#operator_add').simulate('click');
+    let sum = container.find('#running-total');
+    expect(sum.text()).toEqual('12');
+  });
+
+
 })
 
