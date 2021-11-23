@@ -72,6 +72,16 @@ describe('Calculator', () => {
     expect(sum.text()).toEqual('12');
   });
 
-
+  it('should clear running total', () => {
+    container.find('#number1').simulate('click');
+    container.find('#operator_add').simulate('click');
+    container.find('#number4').simulate('click');
+    container.find('#operator-equals').simulate('click');
+    let sum = container.find('#running-total');
+    expect(sum.text()).toEqual('5');
+    container.find('#clear').simulate('click');
+    let clear = container.find('#running-total');
+    expect(clear.text()).toEqual('0');
+  });
 })
 
