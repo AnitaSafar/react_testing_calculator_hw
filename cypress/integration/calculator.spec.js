@@ -33,4 +33,12 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '-1.5');
   });
+
+  it('should get error when divided by zero', () => {
+    cy.get('#number7').click();
+    cy.get('#operator-divide').click();
+    cy.get('#number0').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', 'ERROR');
+  })
 })
